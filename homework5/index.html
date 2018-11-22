@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bgimg">
+    <main id="app">
+        <header>
+            <h1>Wish List</h1>
+        </header>
+
+        <ul id="todo-list">
+            <li class="todo-item">
+                <input class="checkbox" type="checkbox">
+                <label class="title">See the unicorn</label>
+                <input class="textfield" type="text">
+                <button class="edit">Change</button>
+                <button class="delete">Delete</button>
+            </li>
+        </ul>
+
+        <form id="todo-form">
+            <input id="add-input" type="text" autocomplete="off">
+            <button id="add-button" type="submit" onkeypress="return main(event)"> Add</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
