@@ -1,9 +1,11 @@
-const main = (document => {
+    
     const todoForm = document.getElementById('todo-form');
     const addInput = document.getElementById('add-input');
     const todoList = document.getElementById('todo-list');
     const todoItems = document.querySelectorAll('.todo-item');
-    //wish constructor 
+
+    //wish constructor
+
     function createTodoItem(title) {
         const checkbox = createElement('input', { type: 'checkbox', className: 'checkbox' });
         const label = createElement('label', { className: 'title' }, title);
@@ -17,7 +19,9 @@ const main = (document => {
 
         return listItem;
     }
+
     //add functions by buttons
+
     function bindEvents(todoItem) {
         const checkbox = todoItem.querySelector('.checkbox');
         const editButton = todoItem.querySelector('button.edit');
@@ -28,13 +32,17 @@ const main = (document => {
         deleteButton.addEventListener('click', deleteTodoItem);
 
     }
+
     //complete wish
+
     function toggleTodoItem() {
         const listItem = this.parentNode;
         listItem.classList.toggle('completed');
 
     }
+
     //edit wish
+
     function editTodoItem() {
         const listItem = this.parentNode;
         const title = listItem.querySelector('.title');
@@ -53,12 +61,16 @@ const main = (document => {
 
         listItem.classList.toggle('editing');
     }
+
     //delete with
+
     function deleteTodoItem() {
         const listItem = this.parentNode;
         todoList.removeChild(listItem);
     }
+
     //add new li-element to the list
+
     function addTodoItem(event) {
         event.preventDefault();
 
@@ -71,7 +83,9 @@ const main = (document => {
         addInput.value = '';
 
     }
+
     //constructor of wish constructor
+
     function createElement(tag, props, ...children) {
         const element = document.createElement(tag);
 
@@ -87,12 +101,11 @@ const main = (document => {
         }
         return element;
     }
+
     //calling function in main function
+
     function main() {
         todoForm.addEventListener('submit', addTodoItem);
         todoItems.forEach(item => bindEvents(item));
     }
-    return main;
-})(document);
-
-main();
+   main();
